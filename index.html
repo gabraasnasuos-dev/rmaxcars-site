@@ -4,272 +4,235 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>R Max Auto Sales | Lebanon, TN</title>
+<title>R Max Auto Sales | Used Cars in Lebanon, TN</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
-  --green:#2ecc40;--green2:#25a832;
-  --red:#d0021b;--red2:#a80015;
-  --gold:#f0c400;
-  --dark:#111;--mid:#1a1a1a;--card:#1e1e1e;
-  --border:#e8e8e8;--bg:#f7f7f7;
-  --muted:#999;--text:#111;
+  --green:#2ecc40;
+  --green2:#27ae35;
+  --red:#d0021b;
+  --red2:#b00217;
+  --dark:#111;
+  --darker:#0a0a0a;
+  --mid:#1a1a1a;
+  --card:#1e1e1e;
+  --border:#2a2a2a;
+  --white:#ffffff;
+  --off:#f5f5f5;
+  --muted:#999;
+  --text:#ddd;
 }
 html{scroll-behavior:smooth;}
-body{font-family:'DM Sans',sans-serif;background:#fff;color:var(--text);overflow-x:hidden;}
+body{font-family:'DM Sans',sans-serif;background:#fff;color:#111;overflow-x:hidden;}
 a{text-decoration:none;color:inherit;}
 input,select,textarea,button{font-family:'DM Sans',sans-serif;}
 
-/* TOPBAR */
-.topbar{background:#111;color:#fff;text-align:center;padding:9px 20px;font-size:.82rem;font-weight:500;}
+/* ======= TOP BAR ======= */
+.topbar{background:#111;color:#fff;text-align:center;padding:10px 20px;font-size:.82rem;font-weight:500;letter-spacing:.3px;}
 .topbar a{color:var(–green);font-weight:700;}
 
-/* NAV */
-nav{background:#fff;border-bottom:2px solid #eee;padding:0 28px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;height:66px;box-shadow:0 2px 12px rgba(0,0,0,.06);}
-.logo-name{font-family:‘Bebas Neue’,sans-serif;font-size:1.65rem;letter-spacing:2px;color:var(–red);}
-.logo-sub{font-size:.6rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#777;}
-.nav-right{display:flex;gap:9px;align-items:center;}
-.nc{background:var(–green);color:#fff;border:none;padding:10px 20px;font-weight:700;font-size:.85rem;border-radius:6px;cursor:pointer;transition:background .2s;white-space:nowrap;}
-.nc:hover{background:var(–green2);}
-.nt{background:#fff;color:#111;border:2px solid #ddd;padding:9px 16px;font-weight:600;font-size:.82rem;border-radius:6px;cursor:pointer;transition:all .2s;white-space:nowrap;}
-.nt:hover{border-color:#999;}
-.admin-btn{background:none;border:1px solid #e0e0e0;color:#aaa;padding:8px 13px;font-size:.68rem;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border-radius:4px;transition:all .2s;}
+/* ======= NAV ======= */
+nav{background:#fff;border-bottom:2px solid #eee;padding:0 28px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;height:68px;}
+.logo-wrap{display:flex;flex-direction:column;line-height:1.1;}
+.logo-name{font-family:‘Bebas Neue’,sans-serif;font-size:1.7rem;letter-spacing:2px;color:var(–red);}
+.logo-sub{font-size:.65rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#555;}
+.nav-right{display:flex;gap:10px;align-items:center;}
+.btn-call-nav{background:var(–green);color:#fff;border:none;padding:11px 22px;font-weight:700;font-size:.88rem;border-radius:6px;cursor:pointer;display:flex;align-items:center;gap:7px;transition:background .2s;}
+.btn-call-nav:hover{background:var(–green2);}
+.btn-text-nav{background:#fff;color:#111;border:2px solid #ddd;padding:10px 18px;font-weight:600;font-size:.85rem;border-radius:6px;cursor:pointer;display:flex;align-items:center;gap:7px;transition:all .2s;}
+.btn-text-nav:hover{border-color:#aaa;}
+.admin-btn{background:none;border:1px solid #ddd;color:#999;padding:8px 14px;font-size:.7rem;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border-radius:4px;transition:all .2s;}
 .admin-btn:hover,.admin-btn.on{border-color:var(–red);color:var(–red);}
 
-/* HERO */
-.hero{position:relative;overflow:hidden;min-height:500px;display:flex;align-items:center;}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,.58),rgba(0,0,0,.65)),url(‘https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1400&q=80’) center/cover no-repeat;}
-.hero-content{position:relative;z-index:1;padding:70px 36px;max-width:620px;}
-.hero-badge{display:inline-block;background:var(–gold);color:#111;font-size:.7rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;border-radius:40px;margin-bottom:18px;}
-.hero h1{font-family:‘Bebas Neue’,sans-serif;font-size:clamp(3rem,9vw,5.5rem);line-height:.93;color:#fff;letter-spacing:2px;margin-bottom:16px;}
-.hero-desc{font-size:.98rem;color:rgba(255,255,255,.85);line-height:1.72;margin-bottom:26px;font-weight:500;}
-.hero-btns{display:flex;flex-direction:column;gap:10px;max-width:310px;}
-.hbc{background:var(–green);color:#fff;border:none;padding:15px 24px;font-size:1rem;font-weight:700;border-radius:8px;cursor:pointer;text-align:center;display:block;transition:background .2s;}
-.hbc:hover{background:var(–green2);}
-.hbt{background:#fff;color:#111;border:none;padding:14px 24px;font-size:.96rem;font-weight:700;border-radius:8px;cursor:pointer;text-align:center;display:block;}
-.hero-checks{margin-top:20px;display:flex;flex-direction:column;gap:9px;}
-.hcheck{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;padding:11px 16px;border-radius:6px;font-size:.86rem;font-weight:600;}
+/* ======= HERO ======= */
+.hero{position:relative;overflow:hidden;min-height:480px;display:flex;align-items:center;}
+.hero-img{position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.62)),url(‘https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1400&q=80’) center/cover no-repeat;z-index:0;}
+.hero-content{position:relative;z-index:1;padding:70px 36px;max-width:640px;}
+.hero-badge{display:inline-block;background:#f0c400;color:#111;font-size:.72rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;border-radius:40px;margin-bottom:20px;}
+.hero h1{font-family:‘Bebas Neue’,sans-serif;font-size:clamp(3.2rem,8vw,5.8rem);line-height:.95;color:#fff;letter-spacing:2px;margin-bottom:18px;}
+.hero-desc{font-size:1rem;color:rgba(255,255,255,.85);line-height:1.7;margin-bottom:28px;font-weight:500;}
+.hero-btns{display:flex;flex-direction:column;gap:12px;max-width:320px;}
+.hero-btn-call{background:var(–green);color:#fff;border:none;padding:16px 28px;font-size:1.05rem;font-weight:700;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:background .2s;}
+.hero-btn-call:hover{background:var(–green2);}
+.hero-btn-text{background:#fff;color:#111;border:none;padding:15px 28px;font-size:1rem;font-weight:700;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:opacity .2s;}
+.hero-btn-text:hover{opacity:.88;}
+.hero-checks{margin-top:22px;display:flex;flex-direction:column;gap:10px;}
+.hero-check{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;padding:12px 18px;border-radius:6px;font-size:.88rem;font-weight:600;display:flex;align-items:center;gap:8px;}
 
-/* SECTION */
-.sec{padding:70px 28px;}
-.sec.gray{background:var(–bg);}
-.sl{font-size:.67rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(–red);margin-bottom:8px;}
-.st{font-family:‘Bebas Neue’,sans-serif;font-size:clamp(2rem,5vw,3.2rem);letter-spacing:1px;color:#111;margin-bottom:38px;line-height:1;}
+/* ======= SECTION ======= */
+.section{padding:70px 28px;}
+.section.gray{background:#f7f7f7;}
+.s-label{font-size:.68rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(–red);margin-bottom:8px;}
+.s-title{font-family:‘Bebas Neue’,sans-serif;font-size:clamp(2rem,5vw,3.2rem);letter-spacing:1px;color:#111;margin-bottom:40px;line-height:1;}
 
-/* CARS */
-.cars-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:18px;}
-.car-card{background:#fff;border:1.5px solid #eee;border-radius:10px;overflow:hidden;transition:box-shadow .22s,transform .22s;}
-.car-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.11);transform:translateY(-3px);}
-.car-img{height:185px;background:#f2f2f2;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
-.car-img img{width:100%;height:100%;object-fit:cover;}
-.car-emoji{font-size:3.8rem;}
-.ccat{position:absolute;top:11px;left:11px;background:var(–red);color:#fff;font-size:.6rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:4px 9px;border-radius:4px;}
-.cavail{position:absolute;top:11px;right:11px;background:#fff;border:1.5px solid #eee;color:var(–green2);font-size:.58rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:4px 9px;border-radius:4px;display:flex;align-items:center;gap:5px;}
-.cavail::before{content:’’;width:5px;height:5px;border-radius:50%;background:var(–green);animation:blink 1.5s ease infinite;flex-shrink:0;}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
-.car-body{padding:18px;}
-.car-price{font-family:‘Bebas Neue’,sans-serif;font-size:1.9rem;color:#111;letter-spacing:1px;margin-bottom:2px;}
-.car-name{font-size:.95rem;font-weight:700;color:#111;margin-bottom:12px;}
-.car-specs{border-top:1px solid #f2f2f2;margin-bottom:12px;}
-.srow{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #f7f7f7;font-size:.77rem;}
-.sk{color:#999;}.sv{font-weight:600;color:#111;}
-.ctags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:14px;}
-.ctag{font-size:.62rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 9px;background:#f5f5f5;border:1px solid #eee;color:#666;border-radius:4px;}
-.car-btns{display:grid;grid-template-columns:1fr 1fr;gap:7px;}
-.car-btns a{text-align:center;padding:10px;font-size:.82rem;font-weight:700;border-radius:6px;display:block;}
-.cbc{background:var(–green);color:#fff;}
-.cbt{background:#111;color:#fff;}
-.no-cars{grid-column:1/-1;text-align:center;padding:60px 20px;color:#bbb;font-size:.85rem;letter-spacing:2px;text-transform:uppercase;border:2px dashed #eee;border-radius:10px;}
+/* ======= CARS GRID ======= */
+.cars-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;}
+.car-card{background:#fff;border:1.5px solid #e8e8e8;border-radius:10px;overflow:hidden;transition:box-shadow .22s,transform .22s;}
+.car-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.12);transform:translateY(-3px);}
+.car-img-wrap{height:190px;background:#f0f0f0;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.car-img-wrap img{width:100%;height:100%;object-fit:cover;}
+.car-no-img{font-size:4rem;}
+.car-cat{position:absolute;top:12px;left:12px;background:var(–red);color:#fff;font-size:.62rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:4px 10px;border-radius:4px;}
+.car-avail{position:absolute;top:12px;right:12px;background:#fff;border:1.5px solid #e8e8e8;color:var(–green2);font-size:.6rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:4px;display:flex;align-items:center;gap:5px;}
+.car-avail::before{content:’’;width:6px;height:6px;border-radius:50%;background:var(–green);animation:blink 1.5s ease infinite;flex-shrink:0;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+.car-body{padding:20px;}
+.car-price{font-family:‘Bebas Neue’,sans-serif;font-size:2rem;color:#111;letter-spacing:1px;margin-bottom:2px;}
+.car-name{font-size:.98rem;font-weight:700;color:#111;margin-bottom:14px;}
+.car-specs{border-top:1px solid #f0f0f0;margin-bottom:14px;}
+.spec-row{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid #f5f5f5;font-size:.8rem;}
+.spec-k{color:#888;}
+.spec-v{font-weight:600;color:#111;}
+.car-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px;}
+.ctag{font-size:.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;background:#f5f5f5;border:1px solid #eee;color:#555;border-radius:4px;}
+.car-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.car-btns a{text-align:center;padding:11px;font-size:.84rem;font-weight:700;border-radius:6px;display:block;transition:opacity .2s;}
+.car-btns a:hover{opacity:.85;}
+.car-btn-call{background:var(–green);color:#fff;}
+.car-btn-text{background:#111;color:#fff;}
+.no-cars{grid-column:1/-1;text-align:center;padding:70px 20px;color:#aaa;font-size:.88rem;letter-spacing:2px;text-transform:uppercase;border:2px dashed #e8e8e8;border-radius:10px;}
 
-/* FINANCING */
-.fin-dark{background:#111;padding:64px 28px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
-.fin-dark .st{color:#fff;margin-bottom:6px;}
-.fin-dark .sl{color:var(–gold);}
-.fin-desc{color:#aaa;font-size:.88rem;line-height:1.75;margin:10px 0 20px;}
-.fps{display:flex;flex-direction:column;gap:11px;}
-.fp{display:flex;gap:11px;align-items:flex-start;font-size:.86rem;color:#bbb;line-height:1.6;}
-.fpi{width:22px;height:22px;background:rgba(46,204,64,.12);border:1px solid rgba(46,204,64,.3);color:var(–green);display:flex;align-items:center;justify-content:center;font-size:.7rem;flex-shrink:0;border-radius:4px;margin-top:2px;}
-.fin-box{background:#fff;padding:38px;border-radius:8px;}
-.fin-box h3{font-family:‘Bebas Neue’,sans-serif;font-size:1.85rem;color:#111;letter-spacing:1px;margin-bottom:10px;}
-.fin-box p{font-size:.84rem;color:#888;line-height:1.72;margin-bottom:22px;}
-.fb-btns{display:flex;flex-direction:column;gap:9px;}
-.fb-btns a{display:block;text-align:center;padding:13px;font-weight:700;font-size:.9rem;border-radius:7px;}
-.fbc{background:var(–green);color:#fff;}
-.fbs{background:#111;color:#fff;}
+/* ======= FINANCING ======= */
+.fin-wrap{background:#111;padding:64px 28px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.fin-wrap .s-title{color:#fff;margin-bottom:8px;}
+.fin-wrap .s-label{color:#f0c400;}
+.fin-desc{color:#aaa;font-size:.9rem;line-height:1.75;margin-bottom:24px;margin-top:10px;}
+.fin-points{display:flex;flex-direction:column;gap:12px;}
+.fp{display:flex;gap:11px;align-items:flex-start;font-size:.87rem;color:#bbb;line-height:1.6;}
+.fp-check{width:22px;height:22px;background:rgba(46,204,64,.15);border:1px solid rgba(46,204,64,.3);color:var(–green);display:flex;align-items:center;justify-content:center;font-size:.7rem;flex-shrink:0;border-radius:4px;margin-top:2px;}
+.fin-box{background:#fff;padding:40px;border-radius:8px;}
+.fin-box h3{font-family:‘Bebas Neue’,sans-serif;font-size:1.9rem;color:#111;margin-bottom:10px;letter-spacing:1px;}
+.fin-box p{font-size:.85rem;color:#777;line-height:1.75;margin-bottom:24px;}
+.fin-btns{display:flex;flex-direction:column;gap:10px;}
+.fin-btns a{display:block;text-align:center;padding:14px;font-weight:700;font-size:.92rem;border-radius:7px;}
+.fin-call{background:var(–green);color:#fff;}
+.fin-sms{background:#111;color:#fff;}
 
-/* WHY */
-.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:14px;}
-.wc{background:#fff;border:1.5px solid #eee;padding:30px 22px;border-radius:8px;transition:border-color .22s,box-shadow .22s;}
-.wc:hover{border-color:var(–green);box-shadow:0 4px 16px rgba(46,204,64,.1);}
-.wnum{font-family:‘Bebas Neue’,sans-serif;font-size:3rem;color:rgba(46,204,64,.28);line-height:1;margin-bottom:10px;}
-.wtitle{font-weight:700;font-size:.9rem;margin-bottom:6px;color:#111;}
-.wdesc{font-size:.78rem;color:#999;line-height:1.65;}
+/* ======= WHY ======= */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;}
+.why-card{background:#fff;border:1.5px solid #ebebeb;padding:32px 24px;border-radius:8px;transition:border-color .22s,box-shadow .22s;}
+.why-card:hover{border-color:var(–green);box-shadow:0 4px 18px rgba(46,204,64,.1);}
+.why-num{font-family:‘Bebas Neue’,sans-serif;font-size:3.2rem;color:rgba(46,204,64,.3);line-height:1;margin-bottom:12px;}
+.why-title{font-weight:700;font-size:.92rem;margin-bottom:7px;color:#111;}
+.why-desc{font-size:.8rem;color:#888;line-height:1.65;}
 
-/* REVIEWS */
-.rev-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;}
-.rc{background:#fff;border:1.5px solid #eee;padding:28px;border-radius:8px;}
-.stars{color:var(–gold);font-size:.82rem;letter-spacing:3px;margin-bottom:12px;}
-.rtext{font-size:.88rem;line-height:1.75;color:#555;margin-bottom:16px;}
-.rbar{width:22px;height:3px;background:var(–green);border-radius:2px;}
+/* ======= REVIEWS ======= */
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;}
+.review-card{background:#fff;border:1.5px solid #ebebeb;padding:30px;border-radius:8px;}
+.stars{color:#f0c400;font-size:.85rem;letter-spacing:3px;margin-bottom:14px;}
+.review-text{font-size:.9rem;line-height:1.75;color:#555;margin-bottom:18px;}
+.review-bar{width:24px;height:3px;background:var(–green);border-radius:2px;}
 
-/* VISIT */
+/* ======= VISIT ======= */
 .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;}
-.vrow{display:flex;gap:13px;margin-bottom:20px;align-items:flex-start;}
-.vicon{width:40px;height:40px;background:var(–green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1rem;border-radius:7px;flex-shrink:0;}
-.vlabel{font-size:.63rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#aaa;margin-bottom:2px;}
-.vval{font-size:.93rem;font-weight:600;color:#111;}
-.mapbox{background:#e8f5e9;height:250px;border-radius:10px;display:flex;align-items:center;justify-content:center;border:2px solid #d0ecd2;font-size:2.5rem;position:relative;overflow:hidden;}
-.mapbox::before{content:’’;position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 16px,rgba(46,204,64,.05) 16px,rgba(46,204,64,.05) 32px);}
-.vbtns{display:flex;gap:9px;margin-top:18px;}
-.vbtns a{padding:12px 22px;font-size:.86rem;font-weight:700;border-radius:7px;display:block;}
-.vcall{background:var(–green);color:#fff;}
-.vsms{background:#111;color:#fff;}
+.vrow{display:flex;gap:14px;align-items:flex-start;margin-bottom:22px;}
+.vicon{width:42px;height:42px;background:var(–green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.1rem;border-radius:8px;flex-shrink:0;}
+.vlabel{font-size:.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#aaa;margin-bottom:3px;}
+.vval{font-size:.95rem;font-weight:600;color:#111;}
+.map-box{background:#e8f5e9;height:260px;display:flex;align-items:center;justify-content:center;border-radius:10px;font-size:3rem;border:2px solid #d0ecd2;position:relative;overflow:hidden;}
+.map-box::before{content:’’;position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 18px,rgba(46,204,64,.05) 18px,rgba(46,204,64,.05) 36px);}
+.visit-btns{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;}
+.visit-btns a{padding:13px 24px;font-size:.88rem;font-weight:700;border-radius:7px;}
+.v-call{background:var(–green);color:#fff;}
+.v-sms{background:#111;color:#fff;}
 
-/* BOTTOM STICKY */
-.sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:150;background:var(–red);padding:13px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
-.scta-txt{color:#fff;font-weight:700;font-size:.92rem;}
-.scta-btns{display:flex;gap:9px;}
-.scta-btns button{padding:10px 20px;font-size:.88rem;font-weight:800;border:none;border-radius:6px;cursor:pointer;}
-.sb1{background:#fff;color:var(–red);}
-.sb2{background:var(–red2);color:#fff;border:1px solid rgba(255,255,255,.25) !important;}
+/* ======= BOTTOM CTA ======= */
+.bottom-cta{background:var(–red);padding:20px 28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;position:sticky;bottom:0;z-index:100;}
+.bcta-text{color:#fff;font-weight:700;font-size:.95rem;}
+.bcta-btns{display:flex;gap:10px;}
+.bcta-call{background:#fff;color:var(–red);padding:11px 22px;font-size:.9rem;font-weight:800;border:none;border-radius:7px;cursor:pointer;}
+.bcta-sms{background:var(–red2);color:#fff;padding:11px 22px;font-size:.9rem;font-weight:800;border:none;border-radius:7px;cursor:pointer;border:1px solid rgba(255,255,255,.25);}
 
-/* FOOTER */
-footer{padding:34px 28px 90px;border-top:1px solid #eee;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:18px;background:#fff;}
-.flogo{font-family:‘Bebas Neue’,sans-serif;font-size:1.4rem;letter-spacing:2px;color:var(–red);}
-.fcopy{font-size:.7rem;color:#bbb;line-height:1.8;max-width:500px;}
+/* ======= FOOTER ======= */
+footer{padding:36px 28px;border-top:1px solid #eee;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:20px;background:#fff;}
+.footer-logo{font-family:‘Bebas Neue’,sans-serif;font-size:1.5rem;letter-spacing:2px;color:var(–red);}
+.footer-copy{font-size:.72rem;color:#aaa;line-height:1.8;max-width:500px;}
 
-/* ============ AI CHAT BUBBLE ============ */
-#ai-bubble{position:fixed;bottom:80px;right:22px;z-index:400;width:52px;height:52px;background:var(–green);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.4rem;box-shadow:0 4px 20px rgba(46,204,64,.4);transition:transform .2s,box-shadow .2s;animation:pulseGreen 2.5s ease infinite;}
-#ai-bubble:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(46,204,64,.55);}
-@keyframes pulseGreen{0%,100%{box-shadow:0 4px 20px rgba(46,204,64,.4)}50%{box-shadow:0 4px 28px rgba(46,204,64,.7)}}
-.ai-badge{position:absolute;top:-3px;right:-3px;background:var(–red);color:#fff;font-size:.5rem;font-weight:800;padding:2px 5px;border-radius:8px;border:2px solid #fff;letter-spacing:.5px;}
-
-/* AI CHAT WINDOW */
-#ai-window{position:fixed;bottom:148px;right:22px;z-index:400;width:340px;height:460px;background:#fff;border-radius:14px;box-shadow:0 12px 48px rgba(0,0,0,.18);display:none;flex-direction:column;overflow:hidden;border:1.5px solid #eee;animation:popUp .22s ease;}
-#ai-window.open{display:flex;}
-@keyframes popUp{from{opacity:0;transform:scale(.92) translateY(10px)}to{opacity:1;transform:scale(1) translateY(0)}}
-.ai-head{background:var(–green);padding:14px 16px;display:flex;align-items:center;gap:10px;flex-shrink:0;}
-.ai-avatar{width:34px;height:34px;background:rgba(255,255,255,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
-.ai-head-info{flex:1;}
-.ai-head-name{font-weight:700;color:#fff;font-size:.9rem;}
-.ai-head-status{font-size:.68rem;color:rgba(255,255,255,.8);display:flex;align-items:center;gap:5px;}
-.ai-head-status::before{content:’’;width:5px;height:5px;border-radius:50%;background:#fff;flex-shrink:0;}
-.ai-close-btn{background:rgba(255,255,255,.2);border:none;color:#fff;width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:.85rem;display:flex;align-items:center;justify-content:center;transition:background .2s;}
-.ai-close-btn:hover{background:rgba(255,255,255,.35);}
-.ai-msgs{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;background:#fafafa;}
-.ai-msgs::-webkit-scrollbar{width:3px;}
-.ai-msgs::-webkit-scrollbar-thumb{background:#ddd;border-radius:2px;}
-.msg{max-width:88%;padding:10px 13px;border-radius:12px;font-size:.84rem;line-height:1.6;animation:msgIn .2s ease;}
-@keyframes msgIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
-.msg.bot{background:#fff;border:1.5px solid #eee;color:#111;border-radius:12px 12px 12px 3px;align-self:flex-start;}
-.msg.user{background:var(–green);color:#fff;border-radius:12px 12px 3px 12px;align-self:flex-end;}
-.msg.typing{background:#fff;border:1.5px solid #eee;align-self:flex-start;padding:12px 16px;}
-.dot-typing{display:flex;gap:4px;align-items:center;}
-.dot-typing span{width:6px;height:6px;border-radius:50%;background:#ccc;animation:dotBounce 1.2s ease infinite;}
-.dot-typing span:nth-child(2){animation-delay:.2s;}
-.dot-typing span:nth-child(3){animation-delay:.4s;}
-@keyframes dotBounce{0%,80%,100%{transform:translateY(0)}40%{transform:translateY(-6px)}}
-.ai-input-wrap{padding:10px 12px;border-top:1.5px solid #eee;display:flex;gap:8px;background:#fff;flex-shrink:0;}
-#ai-input{flex:1;border:1.5px solid #eee;border-radius:8px;padding:9px 12px;font-size:.84rem;outline:none;transition:border-color .18s;background:#fafafa;}
-#ai-input:focus{border-color:var(–green);}
-#ai-send{background:var(–green);color:#fff;border:none;width:36px;height:36px;border-radius:8px;cursor:pointer;font-size:.9rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s;}
-#ai-send:hover{background:var(–green2);}
-.ai-quick{padding:8px 12px 0;display:flex;gap:6px;flex-wrap:wrap;flex-shrink:0;background:#fff;}
-.aq{background:#f0f0f0;border:none;color:#555;font-size:.72rem;font-weight:600;padding:5px 10px;border-radius:20px;cursor:pointer;white-space:nowrap;transition:all .18s;}
-.aq:hover{background:var(–green);color:#fff;}
-
-/* ============ ADMIN PANEL ============ */
-#admin-overlay{display:none;position:fixed;inset:0;z-index:500;background:rgba(0,0,0,.45);backdrop-filter:blur(4px);align-items:flex-start;justify-content:flex-end;}
+/* ======= ADMIN ======= */
+#admin-overlay{display:none;position:fixed;inset:0;z-index:500;background:rgba(0,0,0,.5);backdrop-filter:blur(4px);align-items:flex-start;justify-content:flex-end;}
 #admin-overlay.open{display:flex;}
-#admin-panel{width:min(660px,100vw);height:100vh;background:#fff;border-left:2px solid #eee;display:flex;flex-direction:column;overflow:hidden;animation:slideIn .26s ease;}
+#admin-panel{width:min(680px,100vw);height:100vh;background:#fff;border-left:2px solid #eee;display:flex;flex-direction:column;overflow:hidden;animation:slideIn .28s ease;}
 @keyframes slideIn{from{transform:translateX(100%)}to{transform:translateX(0)}}
-.ap-head{padding:16px 22px;border-bottom:2px solid #eee;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;background:var(–red);}
-.ap-logo{font-family:‘Bebas Neue’,sans-serif;font-size:1.35rem;letter-spacing:2px;color:#fff;}
-.ap-x{background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.3);color:#fff;width:32px;height:32px;font-size:.95rem;cursor:pointer;border-radius:4px;display:flex;align-items:center;justify-content:center;transition:background .2s;}
-.ap-x:hover{background:rgba(255,255,255,.35);}
+.ap-head{padding:18px 24px;border-bottom:2px solid #eee;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;background:var(–red);}
+.ap-logo{font-family:‘Bebas Neue’,sans-serif;font-size:1.4rem;letter-spacing:2px;color:#fff;}
+.ap-close{background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.3);color:#fff;width:34px;height:34px;font-size:1rem;cursor:pointer;border-radius:4px;transition:background .2s;}
+.ap-close:hover{background:rgba(255,255,255,.35);}
 .ap-tabs{display:flex;border-bottom:2px solid #eee;flex-shrink:0;background:#fafafa;}
-.ap-tab{flex:1;padding:13px 8px;font-size:.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:none;border:none;color:#aaa;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all .2s;}
+.ap-tab{flex:1;padding:14px 10px;font-size:.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:none;border:none;color:#aaa;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all .2s;}
 .ap-tab.active{color:var(–red);border-bottom-color:var(–red);background:#fff;}
-.ap-body{flex:1;overflow-y:auto;padding:22px;}
+.ap-body{flex:1;overflow-y:auto;padding:24px;}
 .ap-body::-webkit-scrollbar{width:4px;}
+.ap-body::-webkit-scrollbar-track{background:#f5f5f5;}
 .ap-body::-webkit-scrollbar-thumb{background:#ddd;border-radius:2px;}
 
-/* ADMIN FORM */
-.fsec{font-family:‘Bebas Neue’,sans-serif;font-size:1.3rem;letter-spacing:1px;color:#111;margin-bottom:16px;}
-.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:11px;}
-.ff{grid-column:1/-1;}
-.fg{display:flex;flex-direction:column;gap:5px;}
-.fl{font-size:.66rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#999;}
-.fi{background:#fff;border:1.5px solid #e0e0e0;color:#111;padding:10px 12px;font-size:.86rem;border-radius:6px;outline:none;transition:border-color .18s;width:100%;}
-.fi:focus{border-color:var(–green);}
-.fi::placeholder{color:#ccc;}
-select.fi{cursor:pointer;}
-.fa{grid-column:1/-1;display:flex;gap:9px;margin-top:8px;}
-.btn-save{background:var(–green);color:#fff;border:none;padding:12px 26px;font-size:.88rem;font-weight:700;border-radius:7px;cursor:pointer;transition:background .2s;}
-.btn-save:hover{background:var(–green2);}
-.btn-can{background:#f5f5f5;color:#666;border:none;padding:12px 20px;font-size:.86rem;font-weight:600;border-radius:7px;cursor:pointer;}
-.divider{grid-column:1/-1;height:1px;background:#f0f0f0;margin:4px 0;}
+/* FORM */
+.form-section-title{font-family:‘Bebas Neue’,sans-serif;font-size:1.4rem;letter-spacing:1px;color:#111;margin-bottom:18px;}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.form-full{grid-column:1/-1;}
+.fgroup{display:flex;flex-direction:column;gap:5px;}
+.flabel{font-size:.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#888;}
+.finput{background:#fff;border:1.5px solid #e0e0e0;color:#111;padding:11px 13px;font-size:.88rem;border-radius:6px;outline:none;transition:border-color .18s;width:100%;}
+.finput:focus{border-color:var(–green);}
+.finput::placeholder{color:#ccc;}
+select.finput{cursor:pointer;}
+.form-actions{grid-column:1/-1;display:flex;gap:10px;margin-top:10px;}
+.btn-submit{background:var(–green);color:#fff;border:none;padding:13px 28px;font-size:.9rem;font-weight:700;border-radius:7px;cursor:pointer;transition:background .2s;}
+.btn-submit:hover{background:var(–green2);}
+.btn-cancel{background:#f5f5f5;color:#555;border:none;padding:13px 22px;font-size:.9rem;font-weight:600;border-radius:7px;cursor:pointer;}
 
-/* ADMIN INVENTORY */
-.icount{font-size:.7rem;color:#aaa;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;}
-.ilist{display:flex;flex-direction:column;gap:9px;}
-.iitem{background:#fff;border:1.5px solid #ebebeb;border-radius:8px;padding:13px 15px;display:flex;align-items:center;gap:13px;transition:border-color .18s;}
-.iitem:hover{border-color:#ccc;}
-.ithumb{width:50px;height:50px;background:#f5f5f5;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;overflow:hidden;flex-shrink:0;}
-.ithumb img{width:100%;height:100%;object-fit:cover;}
-.iinfo{flex:1;min-width:0;}
-.iname{font-weight:700;font-size:.9rem;color:#111;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.imeta{font-size:.73rem;color:#aaa;display:flex;gap:10px;flex-wrap:wrap;}
-.iprice{font-family:‘Bebas Neue’,sans-serif;font-size:1.3rem;color:#111;flex-shrink:0;}
-.iacts{display:flex;gap:6px;flex-shrink:0;}
-.bedit{background:#e8f0fe;border:1px solid #c5d4f8;color:#2563eb;padding:6px 12px;font-size:.72rem;font-weight:700;border-radius:5px;cursor:pointer;transition:background .18s;}
-.bedit:hover{background:#d2e0fd;}
-.bdel{background:#fde8e8;border:1px solid #f8c5c5;color:#dc2626;padding:6px 12px;font-size:.72rem;font-weight:700;border-radius:5px;cursor:pointer;transition:background .18s;}
-.bdel:hover{background:#fdd2d2;}
-.iempty{text-align:center;padding:50px 20px;color:#ccc;font-size:.82rem;letter-spacing:2px;text-transform:uppercase;border:2px dashed #eee;border-radius:8px;}
+/* INVENTORY LIST */
+.inv-count{font-size:.72rem;color:#aaa;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;}
+.inv-list{display:flex;flex-direction:column;gap:10px;}
+.inv-item{background:#fff;border:1.5px solid #ebebeb;border-radius:8px;padding:14px 16px;display:flex;align-items:center;gap:14px;transition:border-color .2s;}
+.inv-item:hover{border-color:#ccc;}
+.inv-thumb{width:54px;height:54px;background:#f5f5f5;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:1.7rem;overflow:hidden;flex-shrink:0;}
+.inv-thumb img{width:100%;height:100%;object-fit:cover;}
+.inv-info{flex:1;min-width:0;}
+.inv-name{font-weight:700;font-size:.92rem;color:#111;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.inv-meta{font-size:.75rem;color:#aaa;display:flex;gap:10px;flex-wrap:wrap;}
+.inv-price{font-family:‘Bebas Neue’,sans-serif;font-size:1.4rem;color:#111;flex-shrink:0;}
+.inv-actions{display:flex;gap:7px;flex-shrink:0;}
+.btn-edit{background:#e8f0fe;border:1px solid #c5d4f8;color:#2563eb;padding:7px 13px;font-size:.75rem;font-weight:700;border-radius:5px;cursor:pointer;transition:background .2s;}
+.btn-edit:hover{background:#d2e0fd;}
+.btn-del{background:#fde8e8;border:1px solid #f8c5c5;color:#dc2626;padding:7px 13px;font-size:.75rem;font-weight:700;border-radius:5px;cursor:pointer;transition:background .2s;}
+.btn-del:hover{background:#fdd2d2;}
+.inv-empty{text-align:center;padding:50px 20px;color:#ccc;font-size:.85rem;letter-spacing:2px;text-transform:uppercase;border:2px dashed #eee;border-radius:8px;}
 
 /* STATS */
-.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-bottom:20px;}
-.scard{background:#fff;border:1.5px solid #ebebeb;border-radius:8px;padding:20px;}
-.snum{font-family:‘Bebas Neue’,sans-serif;font-size:2.6rem;line-height:1;margin-bottom:3px;}
-.slabel{font-size:.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#aaa;}
-.sg{color:var(–green2);}.sr{color:var(–red);}.sd{color:#111;}
-.qa-wrap{margin-top:4px;}
-.qa-label{font-size:.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#aaa;margin-bottom:10px;}
-.qa-btn{width:100%;background:#f7f7f7;border:1.5px solid #eee;color:#111;padding:12px 16px;font-size:.83rem;font-weight:600;border-radius:7px;cursor:pointer;text-align:left;margin-bottom:7px;display:flex;align-items:center;gap:9px;transition:all .18s;}
-.qa-btn:hover{background:#fff;border-color:#ccc;box-shadow:0 2px 8px rgba(0,0,0,.06);}
-
-/* AI ADMIN TAB */
-.ai-admin-wrap{display:flex;flex-direction:column;height:420px;border:1.5px solid #eee;border-radius:8px;overflow:hidden;}
-.ai-admin-head{background:var(–green);padding:12px 16px;color:#fff;font-weight:700;font-size:.88rem;display:flex;align-items:center;gap:8px;flex-shrink:0;}
-.ai-admin-msgs{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;background:#fafafa;}
-.ai-admin-msgs::-webkit-scrollbar{width:3px;}
-.ai-admin-msgs::-webkit-scrollbar-thumb{background:#ddd;}
-.ai-admin-input{padding:10px 12px;border-top:1.5px solid #eee;display:flex;gap:8px;background:#fff;flex-shrink:0;}
-.ai-admin-input input{flex:1;border:1.5px solid #eee;border-radius:6px;padding:9px 12px;font-size:.84rem;outline:none;transition:border-color .18s;}
-.ai-admin-input input:focus{border-color:var(–green);}
-.ai-admin-input button{background:var(–green);color:#fff;border:none;width:36px;height:36px;border-radius:6px;cursor:pointer;font-size:.9rem;flex-shrink:0;}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;}
+.stat-card{background:#fff;border:1.5px solid #ebebeb;border-radius:8px;padding:22px;}
+.stat-num{font-family:‘Bebas Neue’,sans-serif;font-size:2.8rem;line-height:1;margin-bottom:4px;}
+.stat-label{font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#aaa;}
+.s-green{color:var(–green2);}
+.s-red{color:var(–red);}
+.s-dark{color:#111;}
+.quick-actions{margin-top:6px;}
+.qa-title{font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#aaa;margin-bottom:12px;}
+.qa-btn{width:100%;background:#f7f7f7;border:1.5px solid #eee;color:#111;padding:13px 18px;font-size:.85rem;font-weight:600;border-radius:7px;cursor:pointer;text-align:left;margin-bottom:8px;transition:all .2s;display:flex;align-items:center;gap:10px;}
+.qa-btn:hover{background:#fff;border-color:#ccc;}
 
 /* TOAST */
-.toast{position:fixed;bottom:86px;right:80px;z-index:999;background:#111;color:#fff;padding:12px 20px;border-radius:8px;font-size:.83rem;font-weight:600;box-shadow:0 8px 28px rgba(0,0,0,.22);transform:translateY(50px);opacity:0;transition:all .26s;border-left:4px solid var(–green);max-width:280px;}
+.toast{position:fixed;bottom:80px;right:24px;z-index:999;background:#111;color:#fff;padding:13px 22px;border-radius:8px;font-size:.85rem;font-weight:600;box-shadow:0 8px 32px rgba(0,0,0,.25);transform:translateY(60px);opacity:0;transition:all .28s;border-left:4px solid var(–green);}
 .toast.show{transform:translateY(0);opacity:1;}
 .toast.err{border-left-color:var(–red);}
 
 /* RESPONSIVE */
-@media(max-width:680px){
-nav{padding:0 14px;height:58px;}
-.logo-name{font-size:1.3rem;}
-.nt,.admin-btn{display:none;}
-.hero-content{padding:50px 18px;}
-.sec{padding:50px 18px;}
-.fin-dark{padding:44px 18px;grid-template-columns:1fr;gap:32px;}
+@media(max-width:700px){
+nav{padding:0 16px;height:60px;}
+.logo-name{font-size:1.4rem;}
+.btn-text-nav,.admin-btn{display:none;}
+.hero{min-height:380px;}
+.hero-content{padding:50px 20px;}
+.section{padding:50px 20px;}
+.fin-wrap{padding:44px 20px;grid-template-columns:1fr;gap:36px;}
 .visit-grid{grid-template-columns:1fr;}
-footer{padding:28px 18px 88px;}
-#ai-window{width:calc(100vw - 28px);right:14px;bottom:140px;}
-.fgrid{grid-template-columns:1fr;}
-.ff,.fa{grid-column:auto;}
-.sgrid{grid-template-columns:1fr 1fr;}
+.form-grid{grid-template-columns:1fr;}
+.form-full{grid-column:auto;}
+.stats-grid{grid-template-columns:1fr 1fr;}
+footer{padding:28px 20px;}
+.bottom-cta{padding:14px 20px;}
+.bcta-text{font-size:.82rem;}
 }
 </style>
 
@@ -278,18 +241,18 @@ footer{padding:28px 18px 88px;}
 
 <!-- TOP BAR -->
 
-<div class="topbar">🔥 Fresh Used Cars Weekly &nbsp;·&nbsp; Call/Text: <a href="tel:+16155861380">(615) 586-1380</a></div>
+<div class="topbar">🔥 Fresh Used Cars Weekly &nbsp;·&nbsp; Call/Text Now: <a href="tel:+16155861380">(615) 586-1380</a></div>
 
 <!-- NAV -->
 
 <nav>
-  <div>
+  <div class="logo-wrap">
     <div class="logo-name">R MAX AUTO SALES</div>
     <div class="logo-sub">Used Cars · Lebanon TN</div>
   </div>
   <div class="nav-right">
-    <a href="sms:+16155861380"><button class="nt">💬 Text Now</button></a>
-    <a href="tel:+16155861380"><button class="nc">📞 Call Now</button></a>
+    <a href="sms:+16155861380" class="btn-text-nav">💬 Text Now</a>
+    <a href="tel:+16155861380" class="btn-call-nav">📞 Call Now</a>
     <button class="admin-btn" id="adminBtn" onclick="toggleAdmin()">⚙ ADMIN</button>
   </div>
 </nav>
@@ -297,581 +260,173 @@ footer{padding:28px 18px 88px;}
 <!-- HERO -->
 
 <section class="hero">
-  <div class="hero-bg"></div>
+  <div class="hero-img"></div>
   <div class="hero-content">
     <div class="hero-badge">LOCAL USED CAR DEALER</div>
     <h1>GOOD CARS.<br>GOOD PRICES.<br>CALL NOW.</h1>
     <p class="hero-desc">Affordable used cars in Lebanon, TN. Simple process, clear pricing, and financing options available.</p>
     <div class="hero-btns">
-      <a href="tel:+16155861380" class="hbc">📞 Call Now</a>
-      <a href="sms:+16155861380" class="hbt">💬 Text Now</a>
+      <a href="tel:+16155861380" class="hero-btn-call">📞 Call Now</a>
+      <a href="sms:+16155861380" class="hero-btn-text">💬 Text Now</a>
     </div>
     <div class="hero-checks">
-      <div class="hcheck">✓ Bring Your Mechanic</div>
-      <div class="hcheck">✓ Financing Available</div>
-      <div class="hcheck">✓ Trade-Ins Welcome</div>
+      <div class="hero-check">✓ Bring Your Mechanic</div>
+      <div class="hero-check">✓ Financing Available</div>
+      <div class="hero-check">✓ Trade-Ins Welcome</div>
     </div>
   </div>
 </section>
 
 <!-- INVENTORY -->
 
-<section class="sec">
-  <div class="sl">Available Now</div>
-  <div class="st">AVAILABLE CARS</div>
+<section class="section">
+  <div class="s-label">Available Now</div>
+  <div class="s-title">AVAILABLE CARS</div>
   <div class="cars-grid" id="carsGrid"></div>
-  <p style="font-size:.7rem;color:#bbb;margin-top:16px;line-height:1.8;">* Prices do not include tax, title, registration, and dealer fees. Ask about title status before purchase.</p>
+  <p style="font-size:.72rem;color:#aaa;margin-top:18px;line-height:1.8;">* Prices shown do not include tax, title, registration, and dealer fees. Ask us about title status before purchase.</p>
 </section>
 
 <!-- FINANCING -->
 
-<section style="padding-bottom:70px;">
-  <div class="fin-dark">
+<section style="padding:0 0 70px;">
+  <div class="fin-wrap">
     <div>
-      <div class="sl">Get Approved</div>
-      <div class="st">FINANCING OPTIONS.<br>BASED ON APPROVAL.</div>
-      <p class="fin-desc">We work with financing options for different credit situations. Call or text us for details.</p>
-      <div class="fps">
-        <div class="fp"><div class="fpi">✓</div><span>Payments depend on lender approval</span></div>
-        <div class="fp"><div class="fpi">✓</div><span>Down payment may be required</span></div>
-        <div class="fp"><div class="fpi">✓</div><span>Tax, title &amp; fees added separately</span></div>
-        <div class="fp"><div class="fpi">✓</div><span>Optional warranty available at extra cost</span></div>
-        <div class="fp"><div class="fpi">✓</div><span>Call/text before you visit for details</span></div>
+      <div class="s-label">Get Approved</div>
+      <div class="s-title">FINANCING OPTIONS.<br>BASED ON APPROVAL.</div>
+      <p class="fin-desc">We work with financing options for different credit situations. Down payment, monthly payment, and approval depend on the lender, credit, income, and vehicle.</p>
+      <div class="fin-points">
+        <div class="fp"><div class="fp-check">✓</div><span>Payments depend on lender approval</span></div>
+        <div class="fp"><div class="fp-check">✓</div><span>Down payment may be required</span></div>
+        <div class="fp"><div class="fp-check">✓</div><span>Tax, title &amp; fees added separately</span></div>
+        <div class="fp"><div class="fp-check">✓</div><span>Optional warranty available at extra cost</span></div>
+        <div class="fp"><div class="fp-check">✓</div><span>Call/text before you visit for details</span></div>
       </div>
     </div>
     <div class="fin-box">
       <h3>READY TO GET STARTED?</h3>
-      <p>Call or text before visiting to confirm availability and schedule your test drive. Honest, simple process.</p>
-      <div class="fb-btns">
-        <a href="tel:+16155861380" class="fbc">📞 Call (615) 586-1380</a>
-        <a href="sms:+16155861380" class="fbs">💬 Text Now</a>
+      <p>Call or text us before visiting so we can confirm availability and schedule your test drive. Simple, honest process.</p>
+      <div class="fin-btns">
+        <a href="tel:+16155861380" class="fin-call">📞 Call (615) 586-1380</a>
+        <a href="sms:+16155861380" class="fin-sms">💬 Text Now</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHY -->
+<!-- WHY US -->
 
-<section class="sec gray">
-  <div class="sl">Why Choose Us</div>
-  <div class="st">WHY CUSTOMERS TRUST US</div>
+<section class="section gray">
+  <div class="s-label">Why Choose Us</div>
+  <div class="s-title">WHY CUSTOMERS TRUST US</div>
   <div class="why-grid">
-    <div class="wc"><div class="wnum">01</div><div class="wtitle">Bring Your Mechanic</div><div class="wdesc">We welcome independent inspections before you buy — full transparency.</div></div>
-    <div class="wc"><div class="wnum">02</div><div class="wtitle">Clear Pricing</div><div class="wdesc">Upfront about title, fees, and terms. No surprises at the table.</div></div>
-    <div class="wc"><div class="wnum">03</div><div class="wtitle">Trade-Ins Welcome</div><div class="wdesc">Have a car to trade? We factor it in — ask us when you call.</div></div>
-    <div class="wc"><div class="wnum">04</div><div class="wtitle">Fresh Inventory</div><div class="wdesc">New vehicles added weekly. Call if you don't see what you need.</div></div>
+    <div class="why-card"><div class="why-num">01</div><div class="why-title">Bring Your Mechanic</div><div class="why-desc">We welcome independent inspections before you buy — full transparency, no pressure.</div></div>
+    <div class="why-card"><div class="why-num">02</div><div class="why-title">Clear Pricing</div><div class="why-desc">Upfront about title status, fees, and terms. No surprises at the table.</div></div>
+    <div class="why-card"><div class="why-num">03</div><div class="why-title">Trade-Ins Welcome</div><div class="why-desc">Have a car to trade? We factor it in — ask us when you call.</div></div>
+    <div class="why-card"><div class="why-num">04</div><div class="why-title">Fresh Inventory</div><div class="why-desc">New vehicles added weekly. Call if you don't see what you need.</div></div>
   </div>
 </section>
 
 <!-- REVIEWS -->
 
-<section class="sec">
-  <div class="sl">Customer Reviews</div>
-  <div class="st">SHORT, CLEAR &amp; HONEST</div>
-  <div class="rev-grid">
-    <div class="rc"><div class="stars">★★★★★</div><div class="rtext">"Good prices and easy process. Honest local dealer."</div><div class="rbar"></div></div>
-    <div class="rc"><div class="stars">★★★★★</div><div class="rtext">"I was able to check the car and ask questions before buying."</div><div class="rbar"></div></div>
-    <div class="rc"><div class="stars">★★★★★</div><div class="rtext">"Simple paperwork and good communication."</div><div class="rbar"></div></div>
+<section class="section">
+  <div class="s-label">Customer Reviews</div>
+  <div class="s-title">SHORT, CLEAR &amp; HONEST</div>
+  <div class="reviews-grid">
+    <div class="review-card"><div class="stars">★★★★★</div><div class="review-text">"Good prices and easy process. Honest local dealer."</div><div class="review-bar"></div></div>
+    <div class="review-card"><div class="stars">★★★★★</div><div class="review-text">"I was able to check the car and ask questions before buying."</div><div class="review-bar"></div></div>
+    <div class="review-card"><div class="stars">★★★★★</div><div class="review-text">"Simple paperwork and good communication."</div><div class="review-bar"></div></div>
   </div>
 </section>
 
 <!-- VISIT -->
 
-<section class="sec gray">
-  <div class="sl">Come See Us</div>
-  <div class="st">VISIT R MAX AUTO SALES</div>
+<section class="section gray">
+  <div class="s-label">Come See Us</div>
+  <div class="s-title">VISIT R MAX AUTO SALES</div>
   <div class="visit-grid">
     <div>
       <div class="vrow"><div class="vicon">📍</div><div><div class="vlabel">Address</div><div class="vval">400 E High Street, Lebanon, TN</div></div></div>
       <div class="vrow"><div class="vicon">📞</div><div><div class="vlabel">Phone / Text</div><div class="vval">(615) 586-1380</div></div></div>
       <div class="vrow"><div class="vicon">🕐</div><div><div class="vlabel">Hours</div><div class="vval">Mon – Sat: 10:00 AM – 6:00 PM</div></div></div>
-      <p style="font-size:.78rem;color:#aaa;line-height:1.75;">Call or text before visiting to confirm availability and schedule a test drive.</p>
-      <div class="vbtns">
-        <a href="tel:+16155861380" class="vcall">📞 Call Now</a>
-        <a href="sms:+16155861380" class="vsms">💬 Text Now</a>
+      <p style="font-size:.8rem;color:#aaa;line-height:1.75;">Call or text before visiting to confirm availability and schedule a test drive.</p>
+      <div class="visit-btns">
+        <a href="tel:+16155861380" class="v-call">📞 Call Now</a>
+        <a href="sms:+16155861380" class="v-sms">💬 Text Now</a>
       </div>
     </div>
-    <div class="mapbox">📍<span style="font-family:'DM Sans';font-size:.75rem;display:block;margin-top:8px;color:#555;text-align:center;">400 E High Street<br>Lebanon, TN</span></div>
+    <div class="map-box" style="font-size:2rem;">📍<br><span style="font-size:.8rem;font-family:'DM Sans';margin-top:10px;display:block;color:#555;">400 E High Street<br>Lebanon, TN</span></div>
   </div>
 </section>
 
 <!-- FOOTER -->
 
 <footer>
-  <div class="flogo">R MAX AUTO SALES</div>
-  <div class="fcopy">© 2026 R Max Auto Sales LLC · 400 E High Street, Lebanon, TN · (615) 586-1380<br>Prices do not include tax, title, registration, and dealer fees. Financing subject to lender approval.</div>
+  <div class="footer-logo">R MAX AUTO SALES</div>
+  <div class="footer-copy">© 2026 R Max Auto Sales LLC · 400 E High Street, Lebanon, TN · (615) 586-1380<br>Prices do not include tax, title, registration, and dealer fees. Financing subject to lender approval. All vehicles sold per final signed paperwork.</div>
 </footer>
 
-<!-- STICKY CTA -->
+<!-- BOTTOM CTA -->
 
-<div class="sticky-cta">
-  <div class="scta-txt">📞 Ready to buy? Call or Text us now!</div>
-  <div class="scta-btns">
-    <a href="tel:+16155861380"><button class="sb1">📞 Call Now</button></a>
-    <a href="sms:+16155861380"><button class="sb2">💬 Text Now</button></a>
-  </div>
-</div>
-
-<!-- ============ AI CHAT BUBBLE ============ -->
-
-<button id="ai-bubble" onclick="toggleAI()" title="Ask our AI Assistant">
-  🤖
-  <span class="ai-badge">AI</span>
-</button>
-
-<!-- AI CHAT WINDOW -->
-
-<div id="ai-window">
-  <div class="ai-head">
-    <div class="ai-avatar">🤖</div>
-    <div class="ai-head-info">
-      <div class="ai-head-name">R Max AI Assistant</div>
-      <div class="ai-head-status">Online · Ready to help</div>
-    </div>
-    <button class="ai-close-btn" onclick="toggleAI()">✕</button>
-  </div>
-  <div class="ai-quick" id="aiQuick">
-    <button class="aq" onclick="quickMsg('What cars do you have?')">🚗 Cars available?</button>
-    <button class="aq" onclick="quickMsg('Do you offer financing?')">💳 Financing?</button>
-    <button class="aq" onclick="quickMsg('Where are you located?')">📍 Location?</button>
-    <button class="aq" onclick="quickMsg('What are your hours?')">🕐 Hours?</button>
-  </div>
-  <div class="ai-msgs" id="aiMsgs"></div>
-  <div class="ai-input-wrap">
-    <input id="ai-input" placeholder="Ask anything about our cars..." onkeydown="if(event.key==='Enter')sendAI()"/>
-    <button id="ai-send" onclick="sendAI()">➤</button>
+<div class="bottom-cta">
+  <div class="bcta-text">📞 Ready to buy? Call or Text us now!</div>
+  <div class="bcta-btns">
+    <a href="tel:+16155861380"><button class="bcta-call">📞 Call Now</button></a>
+    <a href="sms:+16155861380"><button class="bcta-sms">💬 Text Now</button></a>
   </div>
 </div>
 
 <!-- ============ ADMIN PANEL ============ -->
 
-<div id="admin-overlay" onclick="closeAdminOutside(event)">
+<div id="admin-overlay">
   <div id="admin-panel">
     <div class="ap-head">
       <div class="ap-logo">⚙ R MAX · ADMIN DASHBOARD</div>
-      <button class="ap-x" onclick="toggleAdmin()">✕</button>
+      <button class="ap-close" onclick="toggleAdmin()">✕</button>
     </div>
     <div class="ap-tabs">
       <button class="ap-tab active" onclick="switchTab(this,'tab-add')">＋ Add Car</button>
-      <button class="ap-tab" onclick="switchTab(this,'tab-inv')">🚗 Cars</button>
-      <button class="ap-tab" onclick="switchTab(this,'tab-stats')">📊 Stats</button>
-      <button class="ap-tab" onclick="switchTab(this,'tab-ai')">🤖 AI Help</button>
+      <button class="ap-tab" onclick="switchTab(this,'tab-inventory')">🚗 Manage Cars</button>
+      <button class="ap-tab" onclick="switchTab(this,'tab-stats')">📊 Overview</button>
     </div>
     <div class="ap-body">
 
 ```
-  <!-- ADD CAR TAB -->
+  <!-- TAB: ADD CAR -->
   <div id="tab-add">
-    <div class="fsec" id="formTitle">ADD NEW CAR</div>
-    <div class="fgrid">
-      <div class="fg"><label class="fl">Year *</label><input class="fi" id="f-year" type="number" placeholder="2022" min="1990" max="2030"/></div>
-      <div class="fg"><label class="fl">Make *</label><input class="fi" id="f-make" type="text" placeholder="Toyota"/></div>
-      <div class="fg ff"><label class="fl">Model *</label><input class="fi" id="f-model" type="text" placeholder="Camry SE"/></div>
-      <div class="fg"><label class="fl">Price ($) *</label><input class="fi" id="f-price" type="number" placeholder="9500" min="0"/></div>
-      <div class="fg"><label class="fl">Mileage</label><input class="fi" id="f-mileage" type="text" placeholder="85,000 mi"/></div>
-      <div class="fg"><label class="fl">Title Status</label>
-        <select class="fi" id="f-title">
+    <div class="form-section-title" id="formTitle">ADD NEW CAR</div>
+    <div class="form-grid">
+      <div class="fgroup">
+        <label class="flabel">Year *</label>
+        <input class="finput" id="f-year" type="number" placeholder="2022" min="1990" max="2030"/>
+      </div>
+      <div class="fgroup">
+        <label class="flabel">Make *</label>
+        <input class="finput" id="f-make" type="text" placeholder="Toyota"/>
+      </div>
+      <div class="fgroup form-full">
+        <label class="flabel">Model *</label>
+        <input class="finput" id="f-model" type="text" placeholder="Camry"/>
+      </div>
+      <div class="fgroup">
+        <label class="flabel">Price *</label>
+        <input class="finput" id="f-price" type="number" placeholder="9500" min="0"/>
+      </div>
+      <div class="fgroup">
+        <label class="flabel">Mileage</label>
+        <input class="finput" id="f-mileage" type="text" placeholder="85,000 mi"/>
+      </div>
+      <div class="fgroup">
+        <label class="flabel">Title Status</label>
+        <select class="finput" id="f-title">
           <option value="Clean">Clean</option>
           <option value="Rebuilt">Rebuilt</option>
           <option value="Salvage">Salvage</option>
           <option value="TBD">TBD</option>
         </select>
       </div>
-      <div class="fg"><label class="fl">Category</label>
-        <select class="fi" id="f-cat">
+      <div class="fgroup">
+        <label class="flabel">Category</label>
+        <select class="finput" id="f-cat">
           <option value="Sedan">Sedan</option>
-          <option value="SUV">SUV</option>
-          <option value="Family Van">Family Van</option>
-          <option value="Truck">Truck</option>
-          <option value="Hatchback">Hatchback</option>
-          <option value="Coupe">Coupe</option>
-          <option value="Gas Saver">Gas Saver</option>
-          <option value="Luxury">Luxury</option>
-        </select>
-      </div>
-      <div class="fg"><label class="fl">Color</label><input class="fi" id="f-color" type="text" placeholder="Black"/></div>
-      <div class="fg ff"><label class="fl">Image URL (optional)</label><input class="fi" id="f-img" type="url" placeholder="https://..."/></div>
-      <div class="fg ff"><label class="fl">Tags (comma separated)</label><input class="fi" id="f-tags" type="text" placeholder="Runs Good, Ready Today, Low Miles"/></div>
-      <div class="fg ff"><label class="fl">Notes</label><textarea class="fi" id="f-notes" rows="2" placeholder="Any extra details..."></textarea></div>
-      <div class="fa">
-        <button class="btn-save" id="saveBtn" onclick="saveCar()">✓ Save Car</button>
-        <button class="btn-can" id="cancelBtn" onclick="cancelEdit()" style="display:none;">✕ Cancel</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- INVENTORY TAB -->
-  <div id="tab-inv" style="display:none;">
-    <div class="icount" id="invCount">0 cars in inventory</div>
-    <div class="ilist" id="invList"></div>
-  </div>
-
-  <!-- STATS TAB -->
-  <div id="tab-stats" style="display:none;">
-    <div class="sgrid" id="statsGrid"></div>
-    <div class="qa-wrap">
-      <div class="qa-label">Quick Actions</div>
-      <button class="qa-btn" onclick="switchTab(document.querySelector('.ap-tab'),'tab-add')">➕ Add a new car</button>
-      <button class="qa-btn" onclick="switchTab(document.querySelectorAll('.ap-tab')[1],'tab-inv')">🔍 View all inventory</button>
-      <button class="qa-btn" onclick="exportData()">📥 Export inventory (JSON)</button>
-      <button class="qa-btn" onclick="clearAll()">🗑 Clear all cars</button>
-    </div>
-  </div>
-
-  <!-- AI HELP TAB (ADMIN) -->
-  <div id="tab-ai" style="display:none;">
-    <div style="font-size:.7rem;color:#aaa;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;">AI ASSISTANT FOR ADMIN</div>
-    <div class="ai-admin-wrap">
-      <div class="ai-admin-head">🤖 Ask AI to help manage your dealership</div>
-      <div class="ai-admin-msgs" id="adminAiMsgs">
-        <div class="msg bot">Hi! I'm your R Max admin AI. Ask me to help write car descriptions, suggest pricing, create ad copy, or answer any dealership questions!</div>
-      </div>
-      <div class="ai-admin-input">
-        <input id="admin-ai-input" placeholder="e.g. Write a description for a 2019 Honda Civic..." onkeydown="if(event.key==='Enter')sendAdminAI()"/>
-        <button onclick="sendAdminAI()">➤</button>
-      </div>
-    </div>
-    <div style="margin-top:12px;display:flex;gap:7px;flex-wrap:wrap;">
-      <button class="aq" style="font-size:.72rem;" onclick="adminQuick('Write an ad for a 2022 GMC Terrain with rebuilt title, $12,900')">📝 Write ad copy</button>
-      <button class="aq" style="font-size:.72rem;" onclick="adminQuick('Suggest a fair price for a 2018 Chevy Malibu with 90k miles')">💲 Suggest price</button>
-      <button class="aq" style="font-size:.72rem;" onclick="adminQuick('What should I check before listing a used car for sale?')">✅ Pre-listing checklist</button>
-    </div>
-  </div>
-
-</div>
+          <option value="SUV
 ```
-
-  </div>
-</div>
-
-<!-- TOAST -->
-
-<div class="toast" id="toast"></div>
-
-<script>
-// ========= DATA =========
-let cars = JSON.parse(localStorage.getItem('rmaxCars') || '[]');
-let editingId = null;
-
-const EMOJIS = {
-  'Sedan':'🚗','SUV':'🚙','Family Van':'🚐','Truck':'🛻',
-  'Hatchback':'🚗','Coupe':'🏎','Gas Saver':'⛽','Luxury':'🚘'
-};
-
-function saveToDB(){ localStorage.setItem('rmaxCars', JSON.stringify(cars)); }
-
-// ========= RENDER SITE CARS =========
-function renderCars(){
-  const grid = document.getElementById('carsGrid');
-  if(!cars.length){
-    grid.innerHTML = '<div class="no-cars">📦 No cars available right now.<br>Check back soon or call us!</div>';
-    return;
-  }
-  grid.innerHTML = cars.map(c => `
-    <div class="car-card">
-      <div class="car-img">
-        ${c.img ? `<img src="${c.img}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>` : ''}
-        <div class="car-emoji" ${c.img ? 'style="display:none"' : ''}>${EMOJIS[c.cat]||'🚗'}</div>
-        <div class="ccat">${c.cat}</div>
-        <div class="cavail">Available</div>
-      </div>
-      <div class="car-body">
-        <div class="car-price">$${Number(c.price).toLocaleString()}</div>
-        <div class="car-name">${c.year} ${c.make} ${c.model}</div>
-        <div class="car-specs">
-          ${c.mileage?`<div class="srow"><span class="sk">Mileage</span><span class="sv">${c.mileage}</span></div>`:''}
-          <div class="srow"><span class="sk">Title</span><span class="sv">${c.title}</span></div>
-          ${c.color?`<div class="srow"><span class="sk">Color</span><span class="sv">${c.color}</span></div>`:''}
-          ${c.notes?`<div class="srow"><span class="sk">Notes</span><span class="sv">${c.notes}</span></div>`:''}
-        </div>
-        ${c.tags&&c.tags.length?`<div class="ctags">${c.tags.map(t=>`<div class="ctag">${t.trim()}</div>`).join('')}</div>`:''}
-        <div class="car-btns">
-          <a href="tel:+16155861380" class="cbc">📞 Call</a>
-          <a href="sms:+16155861380" class="cbt">💬 Text</a>
-        </div>
-      </div>
-    </div>
-  `).join('');
-}
-
-// ========= ADMIN =========
-function toggleAdmin(){
-  const o = document.getElementById('admin-overlay');
-  const b = document.getElementById('adminBtn');
-  o.classList.toggle('open');
-  b.classList.toggle('on');
-  if(o.classList.contains('open')){ renderInvList(); renderStats(); }
-}
-function closeAdminOutside(e){ if(e.target===document.getElementById('admin-overlay')) toggleAdmin(); }
-
-function switchTab(btn, id){
-  document.querySelectorAll('.ap-tab').forEach(t=>t.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('#admin-panel .ap-body > div').forEach(d=>d.style.display='none');
-  document.getElementById(id).style.display='block';
-  if(id==='tab-inv') renderInvList();
-  if(id==='tab-stats') renderStats();
-}
-
-function saveCar(){
-  const year = document.getElementById('f-year').value.trim();
-  const make = document.getElementById('f-make').value.trim();
-  const model = document.getElementById('f-model').value.trim();
-  const price = document.getElementById('f-price').value.trim();
-  if(!year||!make||!model||!price){ showToast('Fill in required fields (Year, Make, Model, Price)','err'); return; }
-  const car = {
-    id: editingId || Date.now().toString(),
-    year, make, model, price,
-    mileage: document.getElementById('f-mileage').value.trim(),
-    title: document.getElementById('f-title').value,
-    cat: document.getElementById('f-cat').value,
-    color: document.getElementById('f-color').value.trim(),
-    img: document.getElementById('f-img').value.trim(),
-    tags: document.getElementById('f-tags').value.split(',').filter(t=>t.trim()),
-    notes: document.getElementById('f-notes').value.trim(),
-    added: editingId ? (cars.find(c=>c.id===editingId)||{}).added : new Date().toISOString()
-  };
-  if(editingId){ cars = cars.map(c=>c.id===editingId?car:c); showToast('✓ Car updated!'); }
-  else { cars.unshift(car); showToast('✓ Car added to inventory!'); }
-  saveToDB(); renderCars(); cancelEdit();
-}
-
-function editCar(id){
-  const c = cars.find(x=>x.id===id); if(!c) return;
-  editingId = id;
-  document.getElementById('f-year').value=c.year;
-  document.getElementById('f-make').value=c.make;
-  document.getElementById('f-model').value=c.model;
-  document.getElementById('f-price').value=c.price;
-  document.getElementById('f-mileage').value=c.mileage||'';
-  document.getElementById('f-title').value=c.title||'Clean';
-  document.getElementById('f-cat').value=c.cat||'Sedan';
-  document.getElementById('f-color').value=c.color||'';
-  document.getElementById('f-img').value=c.img||'';
-  document.getElementById('f-tags').value=(c.tags||[]).join(', ');
-  document.getElementById('f-notes').value=c.notes||'';
-  document.getElementById('formTitle').textContent='EDIT CAR';
-  document.getElementById('cancelBtn').style.display='inline-block';
-  switchTab(document.querySelector('.ap-tab'),'tab-add');
-  document.querySelector('.ap-tab').classList.add('active');
-}
-
-function cancelEdit(){
-  editingId=null;
-  ['f-year','f-make','f-model','f-price','f-mileage','f-color','f-img','f-tags','f-notes'].forEach(id=>document.getElementById(id).value='');
-  document.getElementById('f-title').value='Clean';
-  document.getElementById('f-cat').value='Sedan';
-  document.getElementById('formTitle').textContent='ADD NEW CAR';
-  document.getElementById('cancelBtn').style.display='none';
-}
-
-function deleteCar(id){
-  if(!confirm('Delete this car from inventory?')) return;
-  cars = cars.filter(c=>c.id!==id);
-  saveToDB(); renderCars(); renderInvList(); renderStats();
-  showToast('Car removed.','err');
-}
-
-function renderInvList(){
-  const list = document.getElementById('invList');
-  const count = document.getElementById('invCount');
-  count.textContent = `${cars.length} car${cars.length!==1?'s':''} in inventory`;
-  if(!cars.length){ list.innerHTML='<div class="iempty">No cars yet. Add your first car!</div>'; return; }
-  list.innerHTML = cars.map(c=>`
-    <div class="iitem">
-      <div class="ithumb">
-        ${c.img?`<img src="${c.img}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/><span style="display:none">${EMOJIS[c.cat]||'🚗'}</span>`:`${EMOJIS[c.cat]||'🚗'}`}
-      </div>
-      <div class="iinfo">
-        <div class="iname">${c.year} ${c.make} ${c.model}</div>
-        <div class="imeta"><span>${c.cat}</span><span>·</span><span>${c.title} Title</span>${c.mileage?`<span>·</span><span>${c.mileage}</span>`:''}</div>
-      </div>
-      <div class="iprice">$${Number(c.price).toLocaleString()}</div>
-      <div class="iacts">
-        <button class="bedit" onclick="editCar('${c.id}')">✏ Edit</button>
-        <button class="bdel" onclick="deleteCar('${c.id}')">🗑</button>
-      </div>
-    </div>
-  `).join('');
-}
-
-function renderStats(){
-  const total = cars.length;
-  const avgPrice = total ? Math.round(cars.reduce((s,c)=>s+Number(c.price),0)/total) : 0;
-  const cats = [...new Set(cars.map(c=>c.cat))].length;
-  const clean = cars.filter(c=>c.title==='Clean').length;
-  document.getElementById('statsGrid').innerHTML = `
-    <div class="scard"><div class="snum sd">${total}</div><div class="slabel">Total Cars</div></div>
-    <div class="scard"><div class="snum sg">$${avgPrice.toLocaleString()}</div><div class="slabel">Avg Price</div></div>
-    <div class="scard"><div class="snum sd">${cats}</div><div class="slabel">Categories</div></div>
-    <div class="scard"><div class="snum sg">${clean}</div><div class="slabel">Clean Title</div></div>
-  `;
-}
-
-function exportData(){
-  const blob = new Blob([JSON.stringify(cars,null,2)],{type:'application/json'});
-  const a = document.createElement('a'); a.href=URL.createObjectURL(blob);
-  a.download='rmax-inventory.json'; a.click();
-  showToast('📥 Inventory exported!');
-}
-
-function clearAll(){
-  if(!confirm(`Delete all ${cars.length} cars? This cannot be undone.`)) return;
-  cars=[]; saveToDB(); renderCars(); renderInvList(); renderStats();
-  showToast('All cars cleared.','err');
-}
-
-// ========= TOAST =========
-function showToast(msg, type=''){
-  const t=document.getElementById('toast');
-  t.textContent=msg; t.className='toast'+(type?' '+type:'');
-  t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'),3000);
-}
-
-// ========= AI CHAT (CUSTOMER) =========
-let aiOpen = false;
-let aiHistory = [];
-let aiGreeted = false;
-
-function toggleAI(){
-  aiOpen = !aiOpen;
-  const win = document.getElementById('ai-window');
-  win.classList.toggle('open', aiOpen);
-  if(aiOpen && !aiGreeted){
-    aiGreeted = true;
-    const inv = cars.length ? `We currently have ${cars.length} car(s): ${cars.map(c=>`${c.year} ${c.make} ${c.model} ($${Number(c.price).toLocaleString()})`).join(', ')}.` : 'Our inventory is updating soon.';
-    addAIMsg(`👋 Hi! Welcome to **R Max Auto Sales** in Lebanon, TN! I'm here to help.\n\n${inv}\n\nAsk me anything about our cars, financing, or how to visit us!`, 'bot');
-  }
-}
-
-function quickMsg(msg){ document.getElementById('ai-input').value=msg; sendAI(); }
-
-function addAIMsg(text, role){
-  const msgs = document.getElementById('aiMsgs');
-  const div = document.createElement('div');
-  div.className = `msg ${role}`;
-  div.innerHTML = text.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/\n/g,'<br>');
-  msgs.appendChild(div);
-  msgs.scrollTop = msgs.scrollHeight;
-  return div;
-}
-
-async function sendAI(){
-  const input = document.getElementById('ai-input');
-  const msg = input.value.trim(); if(!msg) return;
-  input.value = '';
-  addAIMsg(msg,'user');
-  aiHistory.push({role:'user',content:msg});
-
-  // typing indicator
-  const typing = document.createElement('div');
-  typing.className='msg typing';
-  typing.innerHTML='<div class="dot-typing"><span></span><span></span><span></span></div>';
-  document.getElementById('aiMsgs').appendChild(typing);
-  document.getElementById('aiMsgs').scrollTop=9999;
-
-  const invSummary = cars.length
-    ? `Current inventory (${cars.length} cars): ${cars.map(c=>`${c.year} ${c.make} ${c.model}, $${Number(c.price).toLocaleString()}, ${c.cat}, ${c.title} title${c.mileage?', '+c.mileage:''}`).join(' | ')}`
-    : 'No cars currently listed. Inventory updates weekly.';
-
-  const systemPrompt = `You are the friendly AI assistant for R Max Auto Sales, a used car dealership in Lebanon, TN. 
-Phone: (615) 586-1380. Address: 400 E High Street, Lebanon, TN. Hours: Mon-Sat 10am-6pm.
-${invSummary}
-Financing is available (subject to approval). Trade-ins welcome. Customers can bring their mechanic.
-Be helpful, concise, and friendly. Always encourage calling or texting (615) 586-1380. Keep replies short and conversational.`;
-
-  try {
-    const res = await fetch('https://api.anthropic.com/v1/messages',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({
-        model:'claude-sonnet-4-20250514',
-        max_tokens:400,
-        system: systemPrompt,
-        messages: aiHistory
-      })
-    });
-    const data = await res.json();
-    typing.remove();
-    const reply = data.content?.[0]?.text || "I'm having trouble right now. Please call us at (615) 586-1380!";
-    aiHistory.push({role:'assistant',content:reply});
-    addAIMsg(reply,'bot');
-  } catch(e) {
-    typing.remove();
-    addAIMsg("Sorry, I'm having a connection issue. Please call us at **(615) 586-1380** — we're happy to help!",'bot');
-  }
-}
-
-// ========= AI ADMIN =========
-let adminAiHistory = [];
-
-function adminQuick(msg){ document.getElementById('admin-ai-input').value=msg; sendAdminAI(); }
-
-function addAdminMsg(text, role){
-  const msgs = document.getElementById('adminAiMsgs');
-  const div = document.createElement('div');
-  div.className = `msg ${role}`;
-  div.innerHTML = text.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/\n/g,'<br>');
-  msgs.appendChild(div);
-  msgs.scrollTop = msgs.scrollHeight;
-}
-
-async function sendAdminAI(){
-  const input = document.getElementById('admin-ai-input');
-  const msg = input.value.trim(); if(!msg) return;
-  input.value = '';
-  addAdminMsg(msg,'user');
-  adminAiHistory.push({role:'user',content:msg});
-
-  const typing = document.createElement('div');
-  typing.className='msg typing';
-  typing.innerHTML='<div class="dot-typing"><span></span><span></span><span></span></div>';
-  document.getElementById('adminAiMsgs').appendChild(typing);
-  document.getElementById('adminAiMsgs').scrollTop=9999;
-
-  const invInfo = `Current inventory: ${cars.length} cars. ${cars.map(c=>`${c.year} ${c.make} ${c.model} $${c.price}`).join(', ')}`;
-
-  try {
-    const res = await fetch('https://api.anthropic.com/v1/messages',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({
-        model:'claude-sonnet-4-20250514',
-        max_tokens:600,
-        system:`You are an expert auto dealership business assistant for R Max Auto Sales in Lebanon, TN. 
-Help the dealer with: writing car descriptions, ad copy, pricing suggestions, business advice, listing tips, and more.
-${invInfo}
-Be professional, practical, and concise.`,
-        messages: adminAiHistory
-      })
-    });
-    const data = await res.json();
-    typing.remove();
-    const reply = data.content?.[0]?.text || "Something went wrong. Try again.";
-    adminAiHistory.push({role:'assistant',content:reply});
-    addAdminMsg(reply,'bot');
-  } catch(e){
-    typing.remove();
-    addAdminMsg("Connection error. Check your internet and try again.",'bot');
-  }
-}
-
-// ========= INIT =========
-// Load demo cars if empty
-if(!cars.length){
-  cars = [
-    {id:'1',year:'2014',make:'Toyota',model:'Sienna',price:'8500',mileage:'TBD',title:'Rebuilt',cat:'Family Van',color:'Silver',img:'',tags:['Runs Good','Ready Today','7-Passenger'],notes:''},
-    {id:'2',year:'2018',make:'Chevrolet',model:'Malibu',price:'7500',mileage:'TBD',title:'TBD',cat:'Gas Saver',color:'White',img:'',tags:['Good MPG','Smooth Ride'],notes:''},
-    {id:'3',year:'2022',make:'GMC',model:'Terrain',price:'12900',mileage:'121,000 mi',title:'Rebuilt',cat:'SUV',color:'Black',img:'',tags:['SUV','2022 Model'],notes:'Approval Based'},
-  ];
-  saveToDB();
-}
-
-renderCars();
-</script>
-
-</body>
-</html>
-
-
